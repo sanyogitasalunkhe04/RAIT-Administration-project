@@ -1,0 +1,150 @@
+INSERT INTO StudentInfo
+           ([FName]
+           ,[MName]
+           ,[LName]
+           ,[MFName]
+           ,[Gender]
+           ,[Religion]
+           ,[Caste]
+           ,[SubCaste]
+           ,[Phone]
+           ,[Mobile]
+           ,[Email]
+           ,[Address]
+           ,[MotherTongue]
+           ,[DateOfBirth]
+           ,[BirthPlace]
+           ,[StateOfDomicile]
+           ,[Nationaity]
+           ,[Pincode]
+           ,[NearestRailwayStation]
+           ,[BloodGroup]
+           ,[LastCollegeAttended]
+           ,[HSCBoardId]
+           ,[DiplomaBoardId]
+           ,[SchoolDistrict]
+           ,[SchoolState]
+           ,[PName]
+           ,[PPhone]
+           ,[PMobile]
+           ,[PEmail]
+           ,[POfficeAddress]
+           ,[POfficePincode]
+           ,[NoOfChildren]
+           ,[PAnnuaIncome]
+           ,[PEducation]
+           ,[POccupation]
+           ,[PAddress]
+           ,[PPincode]
+           ,[RollNo]
+           ,[AdmissionYear]
+           ,[ClassOfAdmission]
+           ,[Course]
+           ,[Branch]
+           ,[Batch]
+           ,[AdmissionAuthority]
+           ,[Affiliation]
+           ,[Category]
+           ,[CandidateType]
+           ,[DDAmount]
+           ,[DDNo]
+           ,[DDDate]
+           ,[NameOFBAnk]
+           ,[CashAmount]
+           ,[AdmissionStatus]
+           ,[CancellingDate]
+           ,[LeavingDate]
+           ,[IncludeGeneralRegistry]
+           ,[AdmissionDate]
+           ,[ReportDate]
+           ,[IsAnamat]
+           ,[UniversityMeritNo]
+           ,[ManagementMeritNo]
+           ,[StateMeritNo]
+           ,[HSCId]
+           ,[SSCId]
+           ,[CETId]
+           ,[JEESeatNo]
+           ,[JeeTotal]
+           ,[StateRank]
+           ,[DiplomaMarks]
+           ,[DiplomaPattern]
+           ,[ListOfDocumentsId]
+           ,[UniversityEligibilityNo]
+           ,[EligibilityDate]
+           ,[ProElgNo])
+     VALUES
+           ('$fname'
+           ,'$mname'
+           ,'$lname'
+           ,'$mfname'
+           ,'$gender'
+           ,'$religion'>
+           ,'$caste'
+           ,'$subcaste'
+           ,'$phoneno'
+           ,'$mobileno'
+           ,'$email'
+           ,'$address'
+           ,'$mothertongue'
+           ,'$dob'
+           ,'$birthplace'
+           ,'$stateofdomicile'
+           ,'$nationaity'
+           ,'$pincode'
+           ,'$nrs'
+           ,'$bloodgroup'
+           ,'$lastcollegeattended'
+           ,'$hscboardid'
+           ,'$diplomaboardid'
+           ,'$districtnnwhichschoolwaslocated
+           ,'$stateinwhichschoolwaslocated'
+           ,'$pname'
+           ,'$pphoneno'
+           ,'$pmobileno'
+           ,'$pemail'
+           ,'$officeaddress'
+           ,'$ppincode'
+           ,'$noofchildren'
+           ,'$annualincome'
+           ,'$parentseducation'
+           ,'$occupation'
+           ,<PAddress, nchar(10),>
+           ,<PPincode, numeric(18,0),>
+           ,<RollNo, numeric(18,0),>
+           ,<AdmissionYear, numeric(18,0),>
+           ,<ClassOfAdmission, nchar(10),>
+           ,<Course, nchar(10),>
+           ,<Branch, nchar(10),>
+           ,<Batch, nchar(10),>
+           ,<AdmissionAuthority, nchar(10),>
+           ,<Affiliation, nchar(10),>
+           ,<Category, nchar(10),>
+           ,<CandidateType, nchar(10),>
+           ,<DDAmount, numeric(18,0),>
+           ,<DDNo, numeric(18,0),>
+           ,<DDDate, numeric(18,0),>
+           ,<NameOFBAnk, nchar(10),>
+           ,<CashAmount, numeric(18,0),>
+           ,<AdmissionStatus, nchar(10),>
+           ,<CancellingDate, numeric(18,0),>
+           ,<LeavingDate, numeric(18,0),>
+           ,<IncludeGeneralRegistry, nchar(10),>
+           ,<AdmissionDate, numeric(18,0),>
+           ,<ReportDate, numeric(18,0),>
+           ,<IsAnamat, nchar(10),>
+           ,<UniversityMeritNo, numeric(18,0),>
+           ,<ManagementMeritNo, numeric(18,0),>
+           ,<StateMeritNo, numeric(18,0),>
+           ,<HSCId, numeric(18,0),>
+           ,<SSCId, numeric(18,0),>
+           ,<CETId, numeric(18,0),>
+           ,<JEESeatNo, numeric(18,0),>
+           ,<JeeTotal, numeric(18,0),>
+           ,<StateRank, numeric(18,0),>
+           ,<DiplomaMarks, numeric(18,0),>
+           ,<DiplomaPattern, nchar(10),>
+           ,<ListOfDocumentsId, numeric(18,0),>
+           ,<UniversityEligibilityNo, numeric(18,0),>
+           ,<EligibilityDate, numeric(18,0),>
+           ,<ProElgNo, numeric(18,0),>)

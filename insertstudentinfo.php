@@ -1,0 +1,263 @@
+<?php
+include('connect.php');
+//$=$_POST[''];
+
+$fname=$_POST['fname'];
+$mname=$_POST['mname'];
+$lname=$_POST['lname'];
+$mfname=$_POST['mfname'];
+$gender=$_POST['gender'];
+$religion=$_POST['religion'];
+$caste=$_POST['caste'];
+$subcaste=$_POST['subcaste'];
+$phoneno=$_POST['phoneno'];
+$mobileno=$_POST['mobileno'];
+$email=$_POST['email'];
+$address=$_POST['address'];
+
+$pincode=$_POST['pincode'];
+$nrs=$_POST['nrs'];
+$bloodgroup=$_POST['bloodgroup'];
+$mothertounge=$_POST['mothertounge'];
+$dob=$_POST['dob'];
+$birthplace=$_POST['birthplace'];
+$stateofdomicile=$_POST['stateofdomicile'];
+$nationality=$_POST['nationality'];
+$lastcollegeattended=$_POST['lastcollegeattended'];
+$hscdboard=$_POST['hscdboard'];
+$districtnnwhichschoolwaslocated=$_POST['districtnnwhichschoolwaslocated'];
+$stateinwhichschoolwaslocated=$_POST['stateinwhichschoolwaslocated'];
+$pname=$_POST['pname'];
+$pphoneno=$_POST['pphoneno'];
+$pmobileno=$_POST['pmobileno'];
+$pemail=$_POST['pemail'];
+$officeaddress=$_POST['officeaddress'];
+$ppincode=$_POST['ppincode'];
+$noofchildren=$_POST['noofchildren'];
+$annualincome=$_POST['annualincome'];
+$parentseducation=$_POST['parentseducation'];
+$occupation=$_POST['occupation'];
+$nativeaddress=$_POST['nativeaddress'];
+$npincode=$_POST['npincode'];
+$admissionauthority=$_POST['admissionauthority'];
+$yearofadmission=$_POST['yearofadmission'];
+				$stryear=substr($yearofadmission,2,2);//rollno year
+$classofadmission=$_POST['classofadmission'];
+$course=$_POST['course'];
+				$query="select CourseCode from CourseMaster where Description='$course'";
+				$result=mssql_query($query);
+				$row=mssql_fetch_array($result);
+				$strcc=$row[0];//rollno coursecode
+$affiliation=$_POST['affiliation'];
+$category=$_POST['category'];//rollno type or category
+				
+$ddamount=$_POST['ddamount'];
+$ddno=$_POST['ddno'];
+$dddate=$_POST['dddate'];
+$nameofbank=$_POST['nameofbank'];
+$admissiondate=$_POST['admissiondate'];
+$reportingdate=$_POST['reportingdate'];
+$universitymeritno=$_POST['universitymeritno'];
+$managementmeritno=$_POST['managementmeritno'];
+$statemeritno=$_POST['statemeritno'];
+
+$hscyearofpassing=$_POST['hscyearofpassing'];
+$hscseatno=$_POST['hscseatno'];
+$hsccentreno=$_POST['hsccentreno'];
+$hscenglish=$_POST['hscenglish'];
+$hscbiology=$_POST['hscbiology'];
+$hscphysics=$_POST['hscphysics'];
+$hscchemistry=$_POST['hscchemistry'];
+$hscmath=$_POST['hscmath'];
+$hscpcm=$_POST['hscpcm'];
+$hsctotal=$_POST['hsctotal'];
+$query="insert into HSCMaster values(1,'$hscyearofpassing','$hscseatno','$hsccentreno','$hscenglish','$hscbiology','$hscphysics','$hscchemistry','$hscmath','$hscpcm','$hsctotal')";
+mssql_query($query);
+$query="select HSCId from HSCMaster where HSCId=(select max(HSCId) from HSCMaster)";
+$result=mssql_query($query);
+$row=mssql_fetch_array($result);
+$hscid=$row[0];
+//insert into HSCMaster
+$sscmaths=$_POST['sscmaths'];
+$ssctotal=$_POST['ssctotal'];
+$query="insert into SSCMaster values(1,'$sscmaths','$ssctotal')";
+mssql_query($query);
+$query="select SSCId from SSCMaster where SSCId=(select max(SSCId) from SSCMaster)";
+$result=mssql_query($query);
+$row=mssql_fetch_array($result);
+$sscid=$row[0];
+//ssc done
+$cetseatno=$_POST['cetseatno'];
+$cetphysics=$_POST['cetphysics'];
+$cetchemistry=$_POST['cetchemistry'];
+$cetmath=$_POST['cetmath'];
+$cettotal=$_POST['cettotal'];
+$query="insert into CETMaster values(1,'$cetseatno','$cetphysics','$cetchemistry','$cetmath','$cettotal')";
+mssql_query($query);
+$query="select CETId from CETMaster where CETId=(select max(CETId) from CETMaster)";
+$result=mssql_query($query);
+$row=mssql_fetch_array($result);
+$cetid=$row[0];
+//insert into CETMaster
+$jeeseatno=$_POST['jeeseatno'];
+$jeetotal=$_POST['jeetotal'];
+$jeerank=$_POST['jeerank'];
+$diplomafinalyear=$_POST['diplomafinalyear'];
+$diplomapattern=$_POST['diplomapattern'];
+//$=$_POST[''];
+//$=$_POST[''];
+$query="INSERT INTO StudentInfo
+           ([StudentInfoId]
+		   ,[FName]
+           ,[MName]
+           ,[LName]
+           ,[MFName]
+           ,[Gender]
+           ,[Religion]
+           ,[Caste]
+           ,[SubCaste]
+           ,[Phone]
+           ,[Mobile]
+           ,[Email]
+           ,[Address]
+           ,[MotherTongue]
+           ,[DateOfBirth]
+           ,[BirthPlace]
+           ,[StateOfDomicile]
+           ,[Nationaity]
+           ,[Pincode]
+           ,[NearestRailwayStation]
+           ,[BloodGroup]
+           ,[LastCollegeAttended]
+           ,[HSCBoardId]
+           ,[DiplomaBoardId]
+           ,[SchoolDistrict]
+           ,[SchoolState]
+           ,[PName]
+           ,[PPhone]
+           ,[PMobile]
+           ,[PEmail]
+           ,[POfficeAddress]
+           ,[POfficePincode]
+           ,[NoOfChildren]
+           ,[PAnnuaIncome]
+           ,[PEducation]
+           ,[POccupation]
+           ,[PAddress]
+           ,[PPincode]
+           ,[RollNo]
+           ,[AdmissionYear]
+           ,[ClassOfAdmission]
+           ,[Course]
+           ,[Branch]
+           ,[Batch]
+           ,[AdmissionAuthority]
+           ,[Affiliation]
+           ,[Category]
+           ,[CandidateType]
+           ,[DDAmount]
+           ,[DDNo]
+           ,[DDDate]
+           ,[NameOFBAnk]
+           ,[CashAmount]
+           ,[AdmissionStatus]
+           ,[CancellingDate]
+           ,[LeavingDate]
+           ,[IncludeGeneralRegistry]
+           ,[AdmissionDate]
+           ,[ReportDate]
+           ,[IsAnamat]
+           ,[UniversityMeritNo]
+           ,[ManagementMeritNo]
+           ,[StateMeritNo]
+           ,[HSCId]
+           ,[SSCId]
+           ,[CETId]
+           ,[JEESeatNo]
+           ,[JeeTotal]
+           ,[StateRank]
+           ,[DiplomaMarks]
+           ,[DiplomaPattern]
+           ,[ListOfDocumentsId]
+           ,[UniversityEligibilityNo]
+           ,[EligibilityDate]
+           ,[ProElgNo])
+     VALUES
+           (1
+		   ,'$fname'
+           ,'$mname'
+           ,'$lname'
+           ,'$mfname'
+           ,'$gender'
+           ,'$religion'
+           ,'$caste'
+           ,'$subcaste'
+           ,'$phoneno'
+           ,'$mobileno'
+           ,'$email'
+           ,'$address'
+           ,'$mothertongue'
+           ,'$dob'
+           ,'$birthplace'
+           ,'$stateofdomicile'
+           ,'$nationaity'
+           ,'$pincode'
+           ,'$nrs'
+           ,'$bloodgroup'
+           ,'$lastcollegeattended'
+           ,'$hscboardid'
+           ,'$diplomaboardid'
+           ,'$districtnnwhichschoolwaslocated
+           ,'$stateinwhichschoolwaslocated'
+           ,'$pname'
+           ,'$pphoneno'
+           ,'$pmobileno'
+           ,'$pemail'
+           ,'$officeaddress'
+           ,'$ppincode'
+           ,'$noofchildren'
+           ,'$annualincome'
+           ,'$parentseducation'
+           ,'$occupation'
+           ,'$nativeaddress'
+           ,'$npincode'
+           ,'NULL'
+           ,'$yearofadmission'
+           ,'$classofadmission'
+           ,'$course'
+           ,'$course'
+           ,'NULL'
+           ,'$admissionauthority'
+           ,'$affiliation'
+           ,'$category'
+           ,'NULL'
+           ,'$ddamount'
+           ,'$ddno'
+           ,'$dddate'
+           ,'$nameofbank'
+           ,'NULL'
+           ,'NULL'
+           ,'NULL'
+           ,'NULL'
+           ,'NULL'
+           ,'$admissiondate'
+           ,'$reportingdate'
+           ,'NULL'
+           ,'$universitymeritno'
+           ,'$managementmeritno'
+           ,'$statemeritno'
+           ,'$hscid'
+           ,'$sscid'
+           ,'$cetid'
+           ,'$jeeseatno'
+           ,'$jeetotal'
+           ,'$jeerank'
+           ,'$diplomafinalyear'
+           ,'$diplomapattern'
+           ,'NULL'
+           ,'NULL'
+           ,'NULL'
+           ,'NULL')";
+mssql_query($query);
+//header("Location:student wizard.php");
+?>
